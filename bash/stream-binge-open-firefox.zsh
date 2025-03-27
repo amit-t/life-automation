@@ -1,5 +1,5 @@
 #!/bin/zsh
-source ~/.zprofile
+source ~/Profiles/.zprofile
 # Define an array of URLs
 urls=(
     "https://www.netflix.com/browse"

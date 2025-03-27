@@ -1,5 +1,5 @@
 #!/bin/zsh
-
+source ~/Profiles/.zprofile
 # Function to close an application
 close_app() {
     local app_name="$1"
