@@ -44,9 +44,13 @@ APP_NAME="Station"
 disable_fullscreen "$APP_NAME"
 sleep 5  # Wait for the action to complete
 
-# Step 4: Disable fullscreen and kill the app
-disable_fullscreen "$APP_NAME"
-sleep 5  # Wait for the action to complete
+# # Step 4: Disable fullscreen and kill the app
+# disable_fullscreen "$APP_NAME"
+# sleep 5  # Wait for the action to complete
+
+# # Step 4: Disable fullscreen and kill the app
+# disable_fullscreen "$APP_NAME"
+# sleep 5  # Wait for the action to complete
 
 kill_app "$APP_NAME"
 sleep 5  # Wait for the action to complete
@@ -56,4 +60,8 @@ sleep 5  # Wait for the action to complete
 
 # Step 5: Reopen the application
 open_app "$APP_NAME"
+sleep 5  # Wait for the action to complete
+
+# Step 4: Disable fullscreen and kill the app
+disable_fullscreen "$APP_NAME"
 sleep 5  # Wait for the action to complete
