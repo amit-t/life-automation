@@ -37,31 +37,34 @@ kill_app() {
     echo "$app_name killed."
 }
 
-# Application name
-APP_NAME="Station"
+function restart-new-station() {
 
-# Step 4: Disable fullscreen and kill the app
-disable_fullscreen "$APP_NAME"
-sleep 5  # Wait for the action to complete
+    # Application name
+    APP_NAME="Station"
 
-# # Step 4: Disable fullscreen and kill the app
-# disable_fullscreen "$APP_NAME"
-# sleep 5  # Wait for the action to complete
+    # Step 4: Disable fullscreen and kill the app
+    disable_fullscreen "$APP_NAME"
+    sleep 5  # Wait for the action to complete
 
-# # Step 4: Disable fullscreen and kill the app
-# disable_fullscreen "$APP_NAME"
-# sleep 5  # Wait for the action to complete
+    # # Step 4: Disable fullscreen and kill the app
+    # disable_fullscreen "$APP_NAME"
+    # sleep 5  # Wait for the action to complete
 
-kill_app "$APP_NAME"
-sleep 5  # Wait for the action to complete
+    # # Step 4: Disable fullscreen and kill the app
+    # disable_fullscreen "$APP_NAME"
+    # sleep 5  # Wait for the action to complete
 
-kill_app "$APP_NAME"
-sleep 5  # Wait for the action to complete
+    kill_app "$APP_NAME"
+    sleep 5  # Wait for the action to complete
 
-# Step 5: Reopen the application
-open_app "$APP_NAME"
-sleep 5  # Wait for the action to complete
+    kill_app "$APP_NAME"
+    sleep 5  # Wait for the action to complete
 
-# Step 4: Disable fullscreen and kill the app
-disable_fullscreen "$APP_NAME"
-sleep 5  # Wait for the action to complete
+    # Step 5: Reopen the application
+    open_app "$APP_NAME"
+    sleep 5  # Wait for the action to complete
+
+    # Step 4: Disable fullscreen and kill the app
+    disable_fullscreen "$APP_NAME"
+    sleep 5  # Wait for the action to complete
+}

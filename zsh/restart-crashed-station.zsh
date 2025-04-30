@@ -37,7 +37,7 @@ kill_app() {
     echo "$app_name killed."
 }
 
-function restart-station() {
+function restart-crashed-station() {
     # Application name
     APP_NAME="Station"
 
