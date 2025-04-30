@@ -37,40 +37,44 @@ kill_app() {
     echo "$app_name killed."
 }
 
-# Application name
-APP_NAME="Station"
+function restart-station() {
+    # Application name
+    APP_NAME="Station"
 
-kill_app "$APP_NAME"
-sleep 5  # Wait for the action to complete
+    kill_app "$APP_NAME"
+    sleep 5  # Wait for the action to complete
 
-kill_app "$APP_NAME"
-sleep 5  # Wait for the action to complete
+    kill_app "$APP_NAME"
+    sleep 5  # Wait for the action to complete
 
-# Step 5: Reopen the application
-open_app "$APP_NAME"
-sleep 5  # Wait for the action to complete
+    # Step 5: Reopen the application
+    open_app "$APP_NAME"
+    sleep 5  # Wait for the action to complete
 
-# Step 4: Disable fullscreen and kill the app
-disable_fullscreen "$APP_NAME"
-sleep 5  # Wait for the action to complete
+    # Step 4: Disable fullscreen and kill the app
+    disable_fullscreen "$APP_NAME"
+    sleep 5  # Wait for the action to complete
 
-# Step 4: Disable fullscreen and kill the app
-disable_fullscreen "$APP_NAME"
-sleep 5  # Wait for the action to complete
+    # Step 4: Disable fullscreen and kill the app
+    disable_fullscreen "$APP_NAME"
+    sleep 5  # Wait for the action to complete
 
-# close_app "$APP_NAME"
-# sleep 2  # Wait for the action to complete
+    # close_app "$APP_NAME"
+    # sleep 2  # Wait for the action to complete
 
-kill_app "$APP_NAME"
-sleep 5  # Wait for the action to complete
+    kill_app "$APP_NAME"
+    sleep 5  # Wait for the action to complete
 
-kill_app "$APP_NAME"
-sleep 5  # Wait for the action to complete
+    kill_app "$APP_NAME"
+    sleep 5  # Wait for the action to complete
 
-# Step 5: Reopen the application
-open_app "$APP_NAME"
-sleep 5
+    # Step 5: Reopen the application
+    open_app "$APP_NAME"
+    sleep 5
 
-# Step 4: Disable fullscreen and kill the app
-make_fullscreen "$APP_NAME"
-sleep 5
+    # Step 4: Disable fullscreen and kill the app
+    make_fullscreen "$APP_NAME"
+    sleep 5
+}
+
+
