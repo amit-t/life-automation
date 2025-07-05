@@ -11,6 +11,7 @@ A collection of automation scripts to streamline various tasks and improve workf
   - [Application Management](#application-management)
   - [Media Streaming](#media-streaming)
   - [System Maintenance](#system-maintenance)
+  - [AI Rules](#ai-rules)
 - [Usage](#usage)
 - [Contribution](#contribution)
 
@@ -90,8 +91,8 @@ wtree -e vscode branch-name
 
 Scripts to manage applications, particularly for restarting problematic apps:
 
-- `restart-crashed-station.zsh`: Restarts the Station app when it crashes
-- `restart-new-station.zsh`: Starts a fresh instance of Station
+- `restart-crashed-station.zsh`: Restarts the Station app when it crashes with improved error handling and diagnostics
+- `restart-new-station.zsh`: Starts a fresh instance of Station with enhanced startup parameters
 
 #### Usage:
 ```bash
@@ -122,13 +123,42 @@ Scripts to quickly open streaming services in your preferred browser:
 
 Scripts for system maintenance tasks:
 
-- `zcompdump-cleanup.zsh`: Cleans up zsh completion cache files
+- `zcompdump-cleanup.zsh`: Cleans up zsh completion cache files to prevent issues with shell completion
 
 #### Usage:
 ```bash
 # Clean zsh completion cache files
 ./zsh/zcompdump-cleanup.zsh
 ```
+
+### AI Rules
+
+The `.setup-ai-rules.zsh` script helps you set up AI coding assistant rules for your projects. This script copies TypeScript coding guidelines from the repository to your current project.
+
+#### Features:
+- Automatically copies AI rules to a `.ai-rules` directory in your current project
+- Provides best practices for TypeScript development
+- Includes rules for types, interfaces, enums, error handling, and more
+
+#### Usage:
+```bash
+# Navigate to your TypeScript project directory
+cd path/to/your/project
+
+# Copy AI rules to your project
+car
+```
+
+#### Available Rules:
+- Type definitions and usage
+- Interface extensions
+- Enum implementation
+- Default exports
+- Import type statements
+- JSDoc comments
+- Naming conventions
+- Error handling
+- And more
 
 ## Contribution
 

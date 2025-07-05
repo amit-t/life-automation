@@ -1,7 +1,7 @@
 #!/usr/bin/env zsh
 
 # Base URL for Jira tickets
-JIRA_BASE_URL="<JIRA_BASE_URL>/browse/"
+JIRA_BASE_URL="https://jira.gilbarco.com/browse/"
 
 # Function to open Jira tickets
 function open_jira_ticket() {
@@ -31,8 +31,8 @@ jira_ticket_widget() {
   # Get the current command line
   local cmd="$BUFFER"
   
-  # Detect Jira ticket patterns: uppercase letters followed by dash and numbers
-  if [[ "$cmd" =~ ^([A-Z]+-[0-9]+)$ ]]; then
+  # Detect Jira ticket patterns: only SHELLPROD-, ENGAGE-, or ICS- prefixes followed by dash and numbers
+  if [[ "$cmd" =~ ^((SHELLPROD|ENGAGE|ICS|DEVOP|COSCAUAT|ARCH|EBLR|REQ|CCPD|CHEVPROD|SCPS)-[0-9]+)$ ]]; then
     # Clear the command line
     BUFFER=""
     zle accept-line
@@ -42,15 +42,17 @@ jira_ticket_widget() {
     return 0
   fi
   
-  # If multiple tickets are detected, open all of them
-  if [[ "$cmd" =~ ^([A-Z]+-[0-9]+)([[:space:]]+[A-Z]+-[0-9]+)+$ ]]; then
+  # If multiple tickets are detected, open all of them (with allowed prefixes)
+  if [[ "$cmd" =~ ^((SHELLPROD|ENGAGE|ICS|DEVOP|COSCAUAT|ARCH|EBLR|REQ|CCPD|CHEVPROD|SCPS)-[0-9]+)([[:space:]]+(SHELLPROD|ENGAGE|ICS|DEVOP|COSCAUAT|ARCH|EBLR|REQ|CCPD|CHEVPROD|SCPS)-[0-9]+)+$ ]]; then
     # Clear the command line
     BUFFER=""
     zle accept-line
     
     # Split the tickets and open each one
     for ticket in ${(s: :)cmd}; do
-      open_jira_ticket "$ticket"
+      if [[ "$ticket" =~ ^(SHELLPROD|ENGAGE|ICS|DEVOP|COSCAUAT|ARCH|EBLR|REQ|CCPD|CHEVPROD|SCPS)-[0-9]+$ ]]; then
+        open_jira_ticket "$ticket"
+      fi
     done
     return 0
   fi

@@ -114,6 +114,19 @@ wtree() {
       echo "Worktree created at: ${target_path}"
     fi
 
+    # Open the new worktree directory in a new tab in iTerm
+    osascript <<EOF
+    tell application "iTerm"
+        activate
+        tell current window
+            create tab with default profile
+            tell current session
+                write text "cd '$target_path'"
+            end tell
+        end tell
+    end tell
+EOF
+
     echo "Worktree for branch '${branch}' created successfully."
     echo "-----------------------------------------------------"
   done
